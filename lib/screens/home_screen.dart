@@ -233,10 +233,11 @@ class _HomescreenState extends State<Homescreen> {
                        );
                      }
                      else{
-                       return ListView.builder(
+                       return ListView.separated(
+                         physics: NeverScrollableScrollPhysics(),
                            itemCount: snapshot.data!.articles!.length,
-                           scrollDirection: Axis.vertical,
                            shrinkWrap: true,
+                           separatorBuilder: (BuildContext context ,int index)=>SizedBox(height: 20,),
                            itemBuilder: (context,index)
                            {
 
